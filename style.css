@@ -3,8 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-html{
+html,body{
     background-color: black;
+    overflow-x: hidden;
 }
 img{
     max-width: 100%;
