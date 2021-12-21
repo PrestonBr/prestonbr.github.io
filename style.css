@@ -40,6 +40,12 @@ img{
     padding: 8px 25px;
     transition: all .2s ease;
 }
+.navbar ul li a:enabled{
+    text-decoration: none;
+    color: white;
+    padding: 8px 25px;
+    transition: all .2s ease;
+}
 .navbar ul li a:hover{
     text-decoration: underline;
     text-decoration-color: rgb(93, 190, 255);
@@ -241,4 +247,3 @@ img{
 .sm-image:hover{
     filter: saturate(1200%);
 }
-
