@@ -3,9 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-html,body{
+html{
     background-color: black;
-    overflow-x: hidden;
 }
 img{
     max-width: 100%;
@@ -47,6 +46,15 @@ img{
     text-decoration-color: rgb(93, 190, 255);
     color: rgb(93, 190, 255);
     box-shadow: 0px 0px 10px 2px white;
+}
+
+@media (hover: none) {
+    .navbar ul li a{
+        text-decoration: none;
+        color: white;
+        padding: 8px 25px;
+        transition: all .2s ease;
+    }
 }
 
 /*--------------*/
