@@ -1,3 +1,12 @@
+/*
+Tutorial used for photo and basic navigation:
+    https://www.youtube.com/watch?v=zX3ikOsQg58
+    Video Creator: Tutorials Dev
+
+Tutorial used for responsive navigation:
+    https://youtu.be/gXkqy0b4M5g
+    Video Creator: Dev Ed
+*/
 *{
     margin: 0;
     padding: 0;
@@ -23,25 +32,29 @@ img{
     top: 0;
     opacity: 90%;
     z-index: 100;
+    height: 8vh;
 }
-.navbar ul{
+.nav-links{
     display: flex;
     list-style: none;
     margin: 20px 0px;
+    /* padding-top: 20px;
+    padding-bottom: 20px; */
 }
-.navbar ul li{
+.nav-links li{
     font-family: sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
+    /* padding-bottom: 30px; */
 }
-.navbar ul li a{
+.nav-links li a{
     text-decoration: none;
     color: white;
     padding: 8px 25px;
     transition: all .2s ease;
 }
 
-.navbar ul li a:hover{
+.nav-links li a:hover{
     text-decoration: underline;
     text-decoration-color: rgb(93, 190, 255);
     color: rgb(93, 190, 255);
@@ -49,12 +62,84 @@ img{
 }
 
 @media (hover: none) {
-    .navbar ul li a{
+    .nav-links li a{
         text-decoration: none;
         color: white;
         padding: 8px 25px;
         transition: all .2s ease;
     }
+}
+
+.burger{
+    display: none;
+}
+
+.burger div{
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.5s ease;
+}
+
+@media screen and (max-width:768px) {
+    /* Not sure if needed */
+    /* .body{
+        overflow-x: hidden;
+    } */
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 30vh;
+        top: 39px;
+        width: 100vw;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        transform: translateY(-100%);
+    }
+    .nav-links li {
+        padding-bottom: 30px;
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+        position: absolute;
+        right: 60px;
+        cursor: pointer; 
+    }
+}
+
+.nav-active{
+    transform: translateY(0%);
+    transition: transform 0.5s ease-in;
+}
+.nav-close{
+    transition: transform 0.5s ease-out;
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.toggle .b-line1{
+    transform: rotate(-45deg) translate(0px,10px);
+}
+.toggle .b-line2{
+    opacity: 0;
+}
+.toggle .b-line3{
+    transform: rotate(45deg) translate(0px,-10px);
 }
 
 /*--------------*/
