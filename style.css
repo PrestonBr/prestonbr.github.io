@@ -108,7 +108,7 @@ img{
     .burger{
         display: block;
         position: absolute;
-        right: 60px;
+        right: 30px;
         cursor: pointer; 
     }
 }
