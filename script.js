@@ -25,12 +25,24 @@ const navSlide = ()=> {
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7}s`;
             }
         });
-        
+
         // Burger Animation
         burger.classList.toggle('toggle');
 
     });
 
 }
+
+/* Code from https://css-tricks.com/stop-animations-during-window-resizing/ */
+// let resizeTimer;
+// window.addEventListener("resize", () => {
+//     nav.classList.add("resize-animation-stopper");
+//     navLinks.classList.add("resize-animation-stopper");
+//     clearTimeout(resizeTimer);
+//     resizeTimer = setTimeout(() => {
+//         nav.classList.remove("resize-animation-stopper");
+//         navLinks.classList.remove("resize-animation-stopper");
+//     }, 400);
+// });
 
 navSlide();

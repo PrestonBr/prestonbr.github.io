@@ -20,6 +20,11 @@ img{
     height: auto;
 }
 
+.resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
+}
+
 /*--------*/
 /* Navbar */
 /*--------*/
@@ -91,7 +96,8 @@ img{
         position: absolute;
         right: 0px;
         height: 30vh;
-        top: 39px;
+        /* top: 39px; */
+        top: 5vh;
         width: 100vw;
         background-color: black;
         display: flex;
