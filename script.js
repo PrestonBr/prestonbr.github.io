@@ -49,10 +49,10 @@ const navSlide = ()=> {
             });
 
             /* For mobile devices */
-            link.addEventListener('touchend',() => {
-                toggleNav();
-                animateNav();
-            });
+            // link.addEventListener('touchend',() => {
+            //     toggleNav();
+            //     animateNav();
+            // });
         }
     });
 
