@@ -4,9 +4,8 @@ const navSlide = ()=> {
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li')
 
-
-    burger.addEventListener('click',() => {
-    
+    /* Toggle nav items */
+    function toggleNav() {
         // Toggle Nav
         nav.classList.toggle('nav-active');
         isActive = !isActive;
@@ -16,7 +15,10 @@ const navSlide = ()=> {
         } else {
             nav.classList.remove('nav-close');
         }
+    }
 
+    /* Animate Nav items */
+    function animateNav() {
         // Animate Links
         navLinks.forEach((link, index) => {
             if (link.style.animation) {
@@ -28,7 +30,20 @@ const navSlide = ()=> {
 
         // Burger Animation
         burger.classList.toggle('toggle');
+    }
 
+    burger.addEventListener('click',() => {
+
+        toggleNav();
+        animateNav();
+    });
+
+    /* Close burger menu when items are clicked */
+    navLinks.forEach(link => {
+        link.addEventListener('click',() => {
+            toggleNav();
+            animateNav();
+        });
     });
 
 }
@@ -43,10 +58,10 @@ const clickRemovevHighlight = () => {
     const linkedInLogo = document.querySelector('.sm-image');
     const navLinks = document.querySelectorAll('.nav-links li');
 
-    emailLink.addEventListener('click',removeHover);
-    linkedInLogo.addEventListener('click',removeHover);
+    emailLink.addEventListener('click',removeHover(emailLink));
+    linkedInLogo.addEventListener('click',removeHover(linkedInLogo));
     navLinks.forEach(link => {
-        link.addEventListener('click',removeHover);
+        link.addEventListener('click',removeHover(link));
     });
 }
 
