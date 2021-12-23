@@ -79,7 +79,7 @@ const clickRemovevHighlight = () => {
     // linkedInLogo.addEventListener('touchend',removeHover(linkedInLogo));
     // navLinks.forEach(link => {
     //     link.addEventListener('touchend',removeHover(link));
-    });
+    // });
 }
 
 /* Main app functions*/
