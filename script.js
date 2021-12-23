@@ -32,6 +32,7 @@ const navSlide = ()=> {
         burger.classList.toggle('toggle');
     }
 
+    /* Toggle nav when burger menu clicked */
     burger.addEventListener('click',() => {
 
         toggleNav();
@@ -44,6 +45,12 @@ const navSlide = ()=> {
             toggleNav();
             animateNav();
         });
+
+        /* For mobile devices */
+        link.addEventListener('touchend',() => {
+            toggleNav();
+            animateNav();
+        })
     });
 
 }
@@ -62,6 +69,13 @@ const clickRemovevHighlight = () => {
     linkedInLogo.addEventListener('click',removeHover(linkedInLogo));
     navLinks.forEach(link => {
         link.addEventListener('click',removeHover(link));
+    });
+
+    /* For mobile devices */
+    emailLink.addEventListener('touchend',removeHover(emailLink));
+    linkedInLogo.addEventListener('touchend',removeHover(linkedInLogo));
+    navLinks.forEach(link => {
+        link.addEventListener('touchend',removeHover(link));
     });
 }
 
