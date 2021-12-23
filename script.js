@@ -20,13 +20,15 @@ const navSlide = ()=> {
     /* Animate Nav items */
     function animateNav() {
         // Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7}s`;
-            }
-        });
+        if (window.innerWidth < 768) {
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7}s`;
+                }
+            });
+        }
 
         // Burger Animation
         burger.classList.toggle('toggle');
@@ -34,23 +36,24 @@ const navSlide = ()=> {
 
     /* Toggle nav when burger menu clicked */
     burger.addEventListener('click',() => {
-
         toggleNav();
         animateNav();
     });
 
     /* Close burger menu when items are clicked */
     navLinks.forEach(link => {
-        link.addEventListener('click',() => {
-            toggleNav();
-            animateNav();
-        });
+        if (window.innerWidth < 768) {
+            link.addEventListener('click',() => {
+                toggleNav();
+                animateNav();
+            });
 
-        /* For mobile devices */
-        link.addEventListener('touchend',() => {
-            toggleNav();
-            animateNav();
-        })
+            /* For mobile devices */
+            link.addEventListener('touchend',() => {
+                toggleNav();
+                animateNav();
+            });
+        }
     });
 
 }
