@@ -33,6 +33,32 @@ const navSlide = ()=> {
 
 }
 
+/* Remove hover code when things are clicked */
+function removeHover(element) {
+    element.classList.remove(`${element}:hover`);
+}
+
+const clickRemovevHighlight = () => {
+    const emailLink = document.querySelector('.email-text');
+    const linkedInLogo = document.querySelector('.sm-image');
+    const navLinks = document.querySelectorAll('.nav-links li');
+
+    emailLink.addEventListener('click',removeHover);
+    linkedInLogo.addEventListener('click',removeHover);
+    navLinks.forEach(link => {
+        link.addEventListener('click',removeHover);
+    });
+}
+
+/* Main app functions*/
+const app = () => {
+    navSlide();
+    clickRemovevHighlight();
+}
+
+app();
+
+
 /* Code from https://css-tricks.com/stop-animations-during-window-resizing/ */
 // let resizeTimer;
 // window.addEventListener("resize", () => {
@@ -44,5 +70,3 @@ const navSlide = ()=> {
 //         navLinks.classList.remove("resize-animation-stopper");
 //     }, 400);
 // });
-
-navSlide();
