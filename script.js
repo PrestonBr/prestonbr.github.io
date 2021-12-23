@@ -20,15 +20,13 @@ const navSlide = ()=> {
     /* Animate Nav items */
     function animateNav() {
         // Animate Links
-        if (window.innerWidth < 768) {
-            navLinks.forEach((link, index) => {
-                if (link.style.animation) {
-                    link.style.animation = '';
-                } else {
-                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7}s`;
-                }
-            });
-        }
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7}s`;
+            }
+        });
 
         // Burger Animation
         burger.classList.toggle('toggle');
@@ -36,8 +34,10 @@ const navSlide = ()=> {
 
     /* Toggle nav when burger menu clicked */
     burger.addEventListener('click',() => {
-        toggleNav();
-        animateNav();
+        if (window.innerWidth < 768) {
+            toggleNav();
+            animateNav();
+        }
     });
 
     /* Close burger menu when items are clicked */
@@ -89,6 +89,8 @@ const app = () => {
 }
 
 app();
+
+/* TODO: Window resizing on desktop messes things up. Window has to start small to have small capabilities, etc. */
 
 
 /* Code from https://css-tricks.com/stop-animations-during-window-resizing/ */
