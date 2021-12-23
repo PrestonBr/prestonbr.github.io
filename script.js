@@ -75,10 +75,10 @@ const clickRemovevHighlight = () => {
     });
 
     /* For mobile devices */
-    emailLink.addEventListener('touchend',removeHover(emailLink));
-    linkedInLogo.addEventListener('touchend',removeHover(linkedInLogo));
-    navLinks.forEach(link => {
-        link.addEventListener('touchend',removeHover(link));
+    // emailLink.addEventListener('touchend',removeHover(emailLink));
+    // linkedInLogo.addEventListener('touchend',removeHover(linkedInLogo));
+    // navLinks.forEach(link => {
+    //     link.addEventListener('touchend',removeHover(link));
     });
 }
 
