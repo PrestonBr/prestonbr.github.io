@@ -82,13 +82,41 @@ const clickRemovevHighlight = () => {
     // });
 }
 
+/* Toggle Dark and Light Mode */
+const toggleDarkMode = () => {
+    toggleButton = document.getElementById('TD');
+
+    toggleButton.addEventListener('click',() => {
+        document.querySelector('html').classList.toggle('html-light'); /* HTML Toggle */
+        document.body.classList.toggle('body-light'); /* Body Toggle */
+        const hrefs = document.querySelectorAll('a'); /* A-href Toggle */
+        hrefs.forEach(ref => {
+            ref.classList.toggle('a-light')
+        });
+        document.querySelector('.navbar').classList.toggle('navbar-light');
+        const secTitles = document.querySelectorAll('.section-title');
+        secTitles.forEach(title => {
+            title.classList.toggle('section-title-light');
+        });
+        document.querySelector('.sm-image').classList.toggle('sm-image-light');
+        document.querySelector('.td').classList.toggle('td-light');
+        const nav = document.querySelectorAll('.nav-links');
+        secTitles.forEach(link => {
+            link.classList.toggle('nav-links-light');
+        });
+
+    });
+}
+
 /* Main app functions*/
 const app = () => {
     navSlide();
     clickRemovevHighlight();
+    // toggleDarkMode();
 }
 
 app();
+
 
 /* TODO: Window resizing on desktop messes things up. Window has to start small to have small capabilities, etc. */
 
